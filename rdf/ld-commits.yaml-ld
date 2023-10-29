@@ -1,0 +1,24 @@
+'@context':
+  '@version': 1.1
+  ld-commits: 'https://alex-mart.work/rdf/linked-data-commits/'
+  schema: 'http://schema.org/'
+  rdfs: 'http://www.w3.org/2000/01/rdf-schema#'
+  'rdfs:domain':
+    '@type': '@id'
+  'rdfs:range':
+    '@type': '@id'
+'@graph':
+  - '@id': 'ld-commits:commit'
+    '@type': 'rdfs:Class'
+    'rdfs:label': Commit
+    'rdfs:comment': >-
+      A changeset describes the exact differences between two successive
+      versions in the version control system's repository of changes
+  - '@id': 'ld-commits:source'
+    '@type': 'rdf:Property'
+    'rdfs:domain': 'ld-commits:commit'
+    'rdfs:range': 'schema:url'
+    'rdfs:label': Source
+    'rdfs:comment': >-
+      Source (documentation page or knowledge base page) on which this commit is
+      based
